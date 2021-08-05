@@ -40,6 +40,12 @@ public class Order {
     public Order() {
     }
 
+    // 연관관계 메소드
+    public void addOrderItem(OrderItem orderItem) {
+        orderItems.add(orderItem);
+        orderItem.setOrder(this);
+    }
+
     public Long getId() {
         return id;
     }

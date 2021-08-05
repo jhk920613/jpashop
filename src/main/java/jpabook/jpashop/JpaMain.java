@@ -1,5 +1,9 @@
 package jpabook.jpashop;
 
+import com.sun.org.apache.xpath.internal.operations.Or;
+import jpabook.jpashop.domain.Order;
+import jpabook.jpashop.domain.OrderItem;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -19,6 +23,9 @@ public class JpaMain {
         tx.begin();
 
         try {
+            Order order = new Order();
+            order.addOrderItem(new OrderItem());
+
 
             tx.commit();
         } catch (Exception e) {
